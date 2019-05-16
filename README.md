@@ -156,7 +156,7 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 **Rotas de endereço**
 * Todos os campos da entidade ClienteEndereco pode ser passados exceto, usuarioid e clienteid;
-*  POST - http://localhost/api/cadEnderecoCliente/[enderecoClienteEnderecoID]
+*  POST - http://localhost/api/cadEnderecoCliente/
 *  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
 *  PUT - http://localhost/api/Remover/[enderecoClienteEnderecoID]
 *  GET - http://localhost/api/removeCliente/[enderecoClienteID]
