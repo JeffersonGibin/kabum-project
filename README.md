@@ -16,7 +16,7 @@ O Projeto KaBuM é um projeto desenvolvido para a participação do processo sel
 
 ##### 1 - Softwares necessários
 
-Antes de mais nada baixe todos os programas a seguir:
+Antes de mais nada, baixe todos os programas a seguir:
 
 * PHP >= 7.1.21
 * NPM  >= 6.8.0
