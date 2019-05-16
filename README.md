@@ -11,10 +11,10 @@ O Projeto KaBuM é um projeto desenvolvido para a participação do processo sel
 * O cadastro do Cliente deve conter: Nome; Data Nascimento; CPF; RG; Telefone.
 * O Cliente pode ter 1 ou N endereços.
 
-#### Configuração
+#### 1 - Configuração
 
 
-##### 1 - Softwares necessários
+##### 1.1 - Softwares necessários
 
 Antes de mais nada, baixe todos os programas a seguir:
 
@@ -22,7 +22,7 @@ Antes de mais nada, baixe todos os programas a seguir:
 * NPM  >= 6.8.0
 * MySQL >= 5.7.23
 
-##### 2 - Diretório remoto
+##### 1.2 - Diretório remoto
 
 Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito, escolha um diretório de seu preferência e utilize o seguinte comando em seu terminal.
 
@@ -41,11 +41,15 @@ Agora vamos baixar todas dependências que o projeto vue utiliza:
 npm install
 ```
 
-## WebSerivce
+## 1.3 Webservice PHP
 
-O Webservice é quem prove toda massa de dados necessárias para o painel administrativo funcionar.
+O Webservice é quem prove toda massa de dados necessárias para o painel administrativo funcionar. Nesse Projeto o webservice foi construido do zero, mais a frente dessa leitura você vai encontrar as rotas que ele disponibiliza.
 
-Acesse o diretório webservice/config/src/settings/ e edite o arquivo config.php
+Para que o webservice funcione é necessário copiar a pasta webservice dentro do htdocs do seu servidor local.
+
+#### 1.3.1 Configuração webservice
+
+Acesse o diretório kabum-project/webservice/config/src/settings/ e edite o arquivo config.php
 
 ```php
 <?php
