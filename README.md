@@ -96,19 +96,18 @@ $password = "";
 
 Para gerar um token você precisa enviar login e senha para o endpoint de login. O token, id e nome do usuário são salvos no localStorage. Para recuperar utilize a função
 
-
-Para cadastrar um usuário no sistema utilize a seguinte Query.
-
-```sql
-  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('Jefferson', 'Teste', md5('123'), 'ADMIN');
-```
-
 **Retorno**
 ```javascript
 {
  // ao efetuar login você vai perceber que a sessão é salva com essa chave.
   localStorage.get("SESSION_KABUM")
 }
+```
+
+Para cadastrar um usuário no sistema utilize a seguinte Query.
+
+```sql
+  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('Jefferson', 'Teste', md5('123'), 'ADMIN');
 ```
 
 #### HEADER
@@ -130,35 +129,24 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | cpf            | String     | CPF do cliente                                 |
 | rg             | String     | R.G do cliente                                 |
 | dataNascimento | Date       | data de nascimento do cliente                  |
-| numero         | String     | número do cliente                              |
 | telefone       | String     | Telefone do cliente do cliente                 |
 | celular        | String     | Celular do cliente                             |
 | usuarioid      | int        | usuário que cadastrou o cliente **(Required)** |
 
-**Cadastrar**
-*  Os parâmetros necessários para editar um cliente é muito parecido com o cadastro de cliente. Todos os campos da entidade Cliente pode ser passados exceto, id e clienteid;
-*  PUT - http://localhost/api/cadCliente/[clienteID]
-
-**Edtar**
-*  Obrigatório informar o clienteID.
+**Rotas de cliente**
+*  POST - http://localhost/api/cadCliente/
 *  PUT - http://localhost/api/editCliente/[clienteID]
-
-**Remover**
-*  Obrigatório informar o clienteID.
 *  PUT - http://localhost/api/Remover/[clienteID]
-
-**Listar**
-*  Obrigatório informar o clienteID.
 *  GET - http://localhost/api/listaCliente/[clienteID]
 
 #### Endereço Cliente
 
 
 | Parâmetros     | tipo       | Descrição                                                    |
-| -------------  |------------|------------------------------------------------              |
+| -------------  |------------|---------------------------------------------------------     |
 | ativo          | 0/1        | informa se o endereço está  ou não ativo       **(Required)**|
 | endereco       | String     | nome do cliente **(Required)**                               |
-| numero         | String     | Número do imóvel                                             |
+| numero         | String     | Número                                                       |
 | bairro         | String     | Bairro do endereço                                           | 
 | cep            | String     | Cep do endereço do cliente                                   |
 | clienteid      | int        | clienteid                                                    |
@@ -166,20 +154,11 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | cidadeid       | int        | cidadeid                                                     |
 | usuarioid      | int        | usuário que cadastrou o cliente **(Required)**               |
 
-**Cadastrar**
+**Rotas de endereço**
 * Todos os campos da entidade ClienteEndereco pode ser passados exceto, usuarioid e clienteid;
 *  POST - http://localhost/api/cadEnderecoCliente/[enderecoClienteEnderecoID]
-
-**Edtar**
-*  Obrigatório informar o enderecoID.
 *  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
-
-**Remover**
-*  Obrigatório informar o enderecoID.
 *  PUT - http://localhost/api/Remover/[enderecoClienteEnderecoID]
-
-**Listar**
-*  Obrigatório informar o enderecoID.
 *  GET - http://localhost/api/removeCliente/[enderecoClienteID]
 
 
