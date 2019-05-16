@@ -106,6 +106,7 @@ Para cadastrar um usuário no sistema utilize a seguinte Query.
 **Retorno**
 ```javascript
 {
+ // ao efetuar login você vai perceber que a sessão é salva com essa chave.
   localStorage.get("SESSION_KABUM")
 }
 ```
@@ -161,7 +162,7 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | endereco       | String     | nome do cliente **(Required)**                               |
 | numero         | String     | Número do imóvel                                             |
 | bairro         | String     | Bairro do endereço                                           | 
-| cep            | String     |                                                              |
+| cep            | String     | Cep do endereço do cliente                                   |
 | clienteid      | int        | clienteid                                                    |
 | estadoid       | int        | Estadoid                                                     |
 | cidadeid       | int        | cidadeid                                                     |
