@@ -47,7 +47,7 @@ O Webservice é quem prove toda massa de dados necessárias para o painel admini
 
 Para que o webservice funcione é necessário copiar a pasta webservice dentro do htdocs do seu servidor local.
 
-#### 1.3.1 Configuração do webservice
+#### 1.3.1 Configuração do WebService
 
 Acesse o diretório kabum-project/webservice/config/src/settings/ e edite o arquivo config.php
 
@@ -86,11 +86,35 @@ $password = "";
 
 ```
 
+## Documentação API
+
+#### Cliente
+
+
+* Cadastra um cliente
+* POST - http://localhost/api/cadCliente/
+
+| Parâmetros     | tipo       | Descrição                       |
+| -------------  |------------|---------------------------------|
+| nome           | String     | nome do cliente                 |
+| ativo          | bigInt     | 0 / 1                           |
+| cpf            | String     | CPF do cliente                  |
+| dataNascimento | Date       | data de nascimento do cliente   |
+| numero         | String     | número do cliente               |
+| telefone       | String     | Telefone do cliente do cliente  |
+| celular        | String     | Celular do cliente              |
+| usuarioid      | int        | usuário que cadastrou o cliente |
+
+
+**Retorno**
+```json
+{
+}
+```
+
 ### Tecnologias utilizadas
 * PHP
-* Vue.js
-* Vuetify
-* HTML
-* CSS
-* JavaScript
 * MySQL
+* Vue.js, Vuetify
+* HTML, CSS
+
