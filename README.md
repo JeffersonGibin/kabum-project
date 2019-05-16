@@ -18,7 +18,6 @@ O Projeto KaBuM é um projeto desenvolvido para a participação do processo sel
 
 Antes de mais nada baixe todos os programas a seguir:
 
-* VUE >= 3.7.0
 * PHP >= 7.1.21
 * NPM  >= 6.8.0
 * MySQL >= 5.7.23
@@ -85,7 +84,7 @@ $password = "";
 
 #### Tecnologias utilizadas
 * PHP
-* Vue.JS
+* Vue.js
 * Vuetify
 * HTML
 * CSS
