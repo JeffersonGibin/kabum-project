@@ -99,7 +99,7 @@ Para gerar um token você precisa enviar login e senha para o endpoint de login.
 **Retorno**
 ```javascript
 {
-  LocalStorage.get("SESSION_KABUM")
+  localStorage.get("SESSION_KABUM")
 }
 ```
 
