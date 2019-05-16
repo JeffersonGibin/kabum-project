@@ -26,18 +26,18 @@ Antes de mais nada, baixe todos os programas a seguir:
 
 Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito, escolha um diretório de seu preferência e utilize o seguinte comando em seu terminal.
 
-```
+```bash
 git clone https://github.com/JeffersonGibin/kabum-project.git
 ```
 
 O projeto KaBuM utiliza vue.js e o source de seus arquivos estão em '.vue.js' para testar em ambiente local utilize os seguintes comandos:
-```
+```bash
 npm install vue
 ```
 
 Agora vamos baixar todas dependências que o projeto vue utiliza:
 
-```
+```bash
 npm install
 ```
 
