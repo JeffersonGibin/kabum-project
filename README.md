@@ -131,6 +131,7 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | nome           | String     | nome do cliente **(Required)**                 |
 | ativo          | bigInt     | 0 / 1                                          |
 | cpf            | String     | CPF do cliente                                 |
+| rg             | String     | R.G do cliente                                 |
 | dataNascimento | Date       | data de nascimento do cliente                  |
 | numero         | String     | número do cliente                              |
 | telefone       | String     | Telefone do cliente do cliente                 |
@@ -149,6 +150,35 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 *  Obrigatório informar o clienteID.
 *  GET - http://localhost/api/removeCliente/[clienteID]
 
+#### Eendereço Cliente
+
+* Parâmetros necessários para cadastrar um cliente
+* POST - http://localhost/api/cadEnderecoCliente/
+
+| Parâmetros     | tipo       | Descrição                                                    |
+| -------------  |------------|------------------------------------------------              |
+| ativo          | 0/1        | informa se o endereço está  ou não ativo       **(Required)**|
+| endereco       | String     | nome do cliente **(Required)**                               |
+| numero         | String     | Número do imóvel                                             |
+| bairro         | String     | Bairro do endereço                                           | 
+| cep            | String     |                                                              |
+| clienteid      | int        | clienteid                                                    |
+| estadoid       | int        | Estadoid                                                     |
+| cidadeid       | int        | cidadeid                                                     |
+| usuarioid      | int        | usuário que cadastrou o cliente **(Required)**               |
+
+**Cadastrar**
+* Todos os campos da entidade ClienteEndereco pode ser passados exceto, id e clienteid;
+*  PUT - http://localhost/api/cadCliente/[enderecoClienteEndereco/ID]
+
+**Edtar**
+*  Obrigatório informar o clienteID.
+*  PUT - http://localhost/api/editCliente/[enderecoClienteEndereco]);
+
+**Listar**
+*  Obrigatório informar o clienteID.
+*  GET - http://localhost/api/removeCliente/[enderecoCliente/ID]
+
 
 #### Retorno de Erros
 
@@ -160,9 +190,6 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | CLIENTE_NOT_EXISTS          | 200  | O cliente que você está tentando editar não existe.      |
 | CLIENTE_ENDERECO_NOT_EXISTS | 200  | O endereço que você está tentando editar não existe.     |
 | NOT_FOUND                   | 200  | Retornado quando algo não foi encontrado                 |
-
-
-
 
 
 ### Tecnologias utilizadas
