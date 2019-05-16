@@ -43,9 +43,9 @@ npm install
 
 ## WebSerivce
 
-O Webservice é quem prove toda massa de dados necessárias para o painel administrativo. 
+O Webservice é quem prove toda massa de dados necessárias para o painel administrativo funcionar.
 
-Se você já está fez um clone do repositório acesse o diretório webservice/config/src/settings/ e edite o arquivo config.php
+Acesse o diretório webservice/config/src/settings/ e edite o arquivo config.php
 
 ```php
 <?php
