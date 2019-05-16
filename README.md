@@ -14,10 +14,11 @@ O Projeto KaBuM é um projeto desenvolvido para a participação do processo sel
 #### Configuração
 
 
-##### 1 - Softwares necessários ?
+##### 1 - Softwares necessários
 
 Antes de mais nada baixe todos os programas a seguir:
 
+* VUE >= 3.7.0
 * PHP >= 7.1.21
 * NPM  >= 6.8.0
 * MySQL >= 5.7.23
@@ -30,8 +31,16 @@ Certifique-se de que você já tenha feito um clone do repositório. Caso não t
 git clone https://github.com/JeffersonGibin/kabum-project.git
 ```
 
-O projeto KaBuM utiliza vue.js e o source de seus arquivos estão em '.vue'. Para testar em ambiente local certi
+O projeto KaBuM utiliza vue.js e o source de seus arquivos estão em '.vue.js' para testar em ambiente local utilize os seguintes comandos:
+```
+npm install vue
+```
 
+Agora vamos baixar todas dependências que o projeto vue utiliza:
+
+```
+npm install
+```
 
 ## WebSerivce
 
@@ -39,7 +48,40 @@ O Webservice é quem prove toda massa de dados necessárias para o painel admini
 
 Se você já está fez um clone do repositório acesse o diretório webservice/config/src/settings/ e edite o arquivo config.php
 
+```php
+<?php
 
+/*
+ * Define se o ambiente é produção ou desenvolvimento.
+ */
+$environment = "DEV";
+
+/*
+ * Diretório raiz.
+ */
+$dirName = "kabum";
+
+/*
+ * Host da onde está o banco de dados.
+ */
+$host = "localhost";
+
+/*
+ * Nome do banco de dados.
+ */
+$dbname = "";
+
+/*
+ * Usuário do banco de dados.
+ */
+$user = "";
+
+/*
+ * Senha do banco de dados.
+ */
+$password = "";
+
+```
 
 #### Tecnologias utilizadas
 * PHP
