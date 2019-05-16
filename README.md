@@ -1,13 +1,8 @@
 # Projeto KaBuM
 
-
-## PROJETO ALUNO FRONT-END
-
-
 ### O que é ?
 
 O Projeto KaBuM é um projeto desenvolvido para a participação do processo selectivo **KaBuM!**.
-
 
 #### Especificações
 
@@ -16,14 +11,25 @@ O Projeto KaBuM é um projeto desenvolvido para a participação do processo sel
 * O cadastro do Cliente deve conter: Nome; Data Nascimento; CPF; RG; Telefone.
 * O Cliente pode ter 1 ou N endereços.
 
-
 #### Configuração
 
-Se você está acessando esta página pela primeiva vez e gostaria de testar a aplicação por favor siga as seguintes instruções;
+#### Primeiro passo
+
+Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito utilize o seguinte comando em seu terminal.
+
+
+
+
+## WebSerivce
+
+O Webservice é quem prove toda massa de dados necessárias para o painel administrativo. 
+
+Se você já está fez um clone do repositório acesse o diretório webservice/config/src/settings/ e edite o arquivo config.php
 
 
 
 #### Tecnologias utilizadas
+* PHP
 * Vue.JS
 * Vuetify
 * HTML
