@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#rescreve a url para a rota ap1/login/1 que é o equivalente à  webservice.php?service=login&id=1
+RewriteRule ^api/([a-z,0-9,A-Z,_-]+)\/([a-z,0-9,A-Z,_-]+)\/?$ webservice.php?service=$1&id=$2
+
+#rescreve a url para a rota ap1/login/ que é o equivalente à webservice.php?service=login
+RewriteRule ^api/([a-z,0-9,A-Z,_-]+)\/?$ webservice.php?service=$1
