@@ -47,7 +47,7 @@ O Webservice é quem prove toda massa de dados necessárias para o painel admini
 
 Para que o webservice funcione é necessário copiar a pasta webservice dentro do htdocs do seu servidor local.
 
-#### 1.3.1 Configuração webservice
+#### 1.3.1 Configuração do webservice
 
 Acesse o diretório kabum-project/webservice/config/src/settings/ e edite o arquivo config.php
 
