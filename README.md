@@ -123,10 +123,6 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 #### Cliente
 
-
-* Parâmetros necessários para cadastrar um cliente
-* POST - http://localhost/api/cadCliente/
-
 | Parâmetros     | tipo       | Descrição                                      |
 | -------------  |------------|------------------------------------------------|
 | nome           | String     | nome do cliente **(Required)**                 |
@@ -147,14 +143,16 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 *  Obrigatório informar o clienteID.
 *  PUT - http://localhost/api/editCliente/[clienteID]
 
+**Remover**
+*  Obrigatório informar o clienteID.
+*  PUT - http://localhost/api/Remover/[clienteID]
+
 **Listar**
 *  Obrigatório informar o clienteID.
-*  GET - http://localhost/api/removeCliente/[clienteID]
+*  GET - http://localhost/api/listaCliente/[clienteID]
 
-#### Eendereço Cliente
+#### Endereço Cliente
 
-* Parâmetros necessários para cadastrar um cliente
-* POST - http://localhost/api/cadEnderecoCliente/
 
 | Parâmetros     | tipo       | Descrição                                                    |
 | -------------  |------------|------------------------------------------------              |
@@ -169,16 +167,20 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | usuarioid      | int        | usuário que cadastrou o cliente **(Required)**               |
 
 **Cadastrar**
-* Todos os campos da entidade ClienteEndereco pode ser passados exceto, id e clienteid;
-*  PUT - http://localhost/api/cadCliente/[enderecoClienteEndereco/ID]
+* Todos os campos da entidade ClienteEndereco pode ser passados exceto, usuarioid e clienteid;
+*  POST - http://localhost/api/cadEnderecoCliente/[enderecoClienteEnderecoID]
 
 **Edtar**
-*  Obrigatório informar o clienteID.
-*  PUT - http://localhost/api/editCliente/[enderecoClienteEndereco]);
+*  Obrigatório informar o enderecoID.
+*  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
+
+**Remover**
+*  Obrigatório informar o enderecoID.
+*  PUT - http://localhost/api/Remover/[enderecoClienteEnderecoID]
 
 **Listar**
-*  Obrigatório informar o clienteID.
-*  GET - http://localhost/api/removeCliente/[enderecoCliente/ID]
+*  Obrigatório informar o enderecoID.
+*  GET - http://localhost/api/removeCliente/[enderecoClienteID]
 
 
 #### Retorno de Erros
@@ -193,9 +195,9 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | NOT_FOUND                   | 200  | Retornado quando algo não foi encontrado                 |
 
 
-Como colocar em prdução ?
+## Como colocar em produção ?
 
-Muito simples, acesse o diretório raiz do projeto e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos necesário para exbir a página estarão separados no diretório :
+Muito simples, acesse o diretório raiz do projeto e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos para exbir a página estarão separados no diretório **./dist**:
 
 ./dist
     ./statis
