@@ -133,7 +133,7 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 *  Os parâmetros necessários para editar um cliente é muito parecido com o cadastro de cliente. Todos os campos da entidade Cliente pode ser passados exceto, id e clienteid;
 *  PUT - http://localhost/api/cadCliente/[clienteID]
 
-**Remover**
+**Edtar**
 *  Obrigatório informar o clienteID.
 *  PUT - http://localhost/api/editCliente/[clienteID]
 
