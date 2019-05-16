@@ -45,7 +45,7 @@ npm install
 
 O Webservice é quem prove toda massa de dados necessárias para o painel administrativo funcionar. Nesse Projeto o webservice foi construido do zero, mais a frente dessa leitura você vai encontrar as rotas que ele disponibiliza.
 
-Para que o webservice funcione é necessário copiar a pasta webservice dentro do htdocs do seu servidor local.
+Para que o webservice funcione é necessário copiar a pasta webservice dentro do diretório htdocs do seu servidor local.
 
 #### 1.3.1 Configuração do WebService
 
@@ -90,14 +90,23 @@ $password = "";
 
 
 
-
-
 ## Documentação API
+
+
+#### HEADER
+Em todas as rotas é necessário enviar o token(Authorization) no header da requisição exceto na rota **login**.
+**Nota**: O token não expira;
+
+
+| Parâmetros     | tipo       | Descrição                       |
+| -------------  |------------|---------------------------------|
+| Authorization  | String     | Token da sessão do usuário      |
+
 
 #### Cliente
 
 
-* Cadastra um cliente
+* Parâmetros necessários para cadastrar um cliente
 * POST - http://localhost/api/cadCliente/
 
 | Parâmetros     | tipo       | Descrição                       |
@@ -117,6 +126,22 @@ $password = "";
 {
 }
 ```
+
+
+#### Retorno de Erros
+
+| Status                      | Code | message                                                  |
+| ----------------------------|------|----------------------------------------------------------|
+| ERRO                        | 500  | Você não está logado no sistema!                         |
+| REQUIRED_VALUE              | 200  | Campos obrigatórios                                      |
+| CLIENTE_EXISTS              | 200  | O cliente já está cadastrado!                            |
+| CLIENTE_NOT_EXISTS|200      | 200  | O cliente que você está tentando editar não existe.      |
+| CLIENTE_ENDERECO_NOT_EXISTS | 200  | O endereço que você está tentando editar não existe.     |
+| NOT_FOUND                   | 200  | Retornado quando algo não foi encontrado                 |
+
+
+
+
 
 ### Tecnologias utilizadas
 * PHP
