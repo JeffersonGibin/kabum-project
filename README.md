@@ -92,6 +92,15 @@ $password = "";
 
 ## Documentação API
 
+#### Token
+
+Para gerar um token você precisa enviar login e senha para o endpoint de login. O token, id e nome do usuário são salvos no localStorage. Para recuperar utilize a função
+
+**Retorno**
+```javascript
+{
+}
+```
 
 #### HEADER
 Em todas as rotas é necessário enviar o token(Authorization) no header da requisição exceto na rota **login**.
@@ -109,23 +118,28 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 * Parâmetros necessários para cadastrar um cliente
 * POST - http://localhost/api/cadCliente/
 
-| Parâmetros     | tipo       | Descrição                       |
-| -------------  |------------|---------------------------------|
-| nome           | String     | nome do cliente                 |
-| ativo          | bigInt     | 0 / 1                           |
-| cpf            | String     | CPF do cliente                  |
-| dataNascimento | Date       | data de nascimento do cliente   |
-| numero         | String     | número do cliente               |
-| telefone       | String     | Telefone do cliente do cliente  |
-| celular        | String     | Celular do cliente              |
-| usuarioid      | int        | usuário que cadastrou o cliente |
+| Parâmetros     | tipo       | Descrição                                      |
+| -------------  |------------|------------------------------------------------|
+| nome           | String     | nome do cliente **(Required)**                 |
+| ativo          | bigInt     | 0 / 1                                          |
+| cpf            | String     | CPF do cliente                                 |
+| dataNascimento | Date       | data de nascimento do cliente                  |
+| numero         | String     | número do cliente                              |
+| telefone       | String     | Telefone do cliente do cliente                 |
+| celular        | String     | Celular do cliente                             |
+| usuarioid      | int        | usuário que cadastrou o cliente **(Required)** |
 
+**Cadastrar**
+*  Os parâmetros necessários para editar um cliente é muito parecido com o cadastro de cliente. Todos os campos da entidade Cliente pode ser passados exceto, id e clienteid;
+*  PUT - http://localhost/api/cadCliente/[clienteID]
 
-**Retorno**
-```json
-{
-}
-```
+**Remover**
+*  Obrigatório informar o clienteID.
+*  PUT - http://localhost/api/editCliente/[clienteID]
+
+**Listar**
+*  Obrigatório informar o clienteID.
+*  GET - http://localhost/api/removeCliente/[clienteID]
 
 
 #### Retorno de Erros
