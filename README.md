@@ -2,7 +2,7 @@
 
 ### O que é ?
 
-O Projeto KaBuM é um projeto desenvolvido para a participação do processo selectivo **KaBuM!**.
+O Projeto KaBuM é um projeto desenvolvido para participação do processo selectivo **KaBuM!**.
 
 ### Especificações
 
