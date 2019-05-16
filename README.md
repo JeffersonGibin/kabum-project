@@ -15,10 +15,11 @@ O Projeto KaBuM é um projeto desenvolvido para a participação do processo sel
 
 #### Primeiro passo
 
-Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito utilize o seguinte comando em seu terminal.
+Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito, escolha um diretório de seu preferência e utilize o seguinte comando em seu terminal.
 
-
-
+```
+git clone https://github.com/JeffersonGibin/kabum-project.git
+```
 
 ## WebSerivce
 
