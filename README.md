@@ -135,7 +135,7 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | ERRO                        | 500  | Você não está logado no sistema!                         |
 | REQUIRED_VALUE              | 200  | Campos obrigatórios                                      |
 | CLIENTE_EXISTS              | 200  | O cliente já está cadastrado!                            |
-| CLIENTE_NOT_EXISTS|200      | 200  | O cliente que você está tentando editar não existe.      |
+| CLIENTE_NOT_EXISTS          | 200  | O cliente que você está tentando editar não existe.      |
 | CLIENTE_ENDERECO_NOT_EXISTS | 200  | O endereço que você está tentando editar não existe.     |
 | NOT_FOUND                   | 200  | Retornado quando algo não foi encontrado                 |
 
