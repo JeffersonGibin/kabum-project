@@ -96,6 +96,13 @@ $password = "";
 
 Para gerar um token você precisa enviar login e senha para o endpoint de login. O token, id e nome do usuário são salvos no localStorage. Para recuperar utilize a função
 
+
+Para cadastrar um usuário no sistema utilize a seguinte Query.
+
+```sql
+  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('Jefferson', 'Teste', md5('123'), 'ADMIN');
+```
+
 **Retorno**
 ```javascript
 {
