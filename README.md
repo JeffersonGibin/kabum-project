@@ -201,7 +201,7 @@ Muito simples, acesse o diretório raiz do projeto e digite **npm run build**. O
 
 ./dist
     ./statis
-    index.html
+    /index.html
 
 ### Tecnologias utilizadas
 * PHP
