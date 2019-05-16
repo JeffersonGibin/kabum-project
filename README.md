@@ -193,6 +193,14 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | NOT_FOUND                   | 200  | Retornado quando algo não foi encontrado                 |
 
 
+Como colocar em prdução ?
+
+Muito simples, acesse o diretório raiz do projeto e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos necesário para exbir a página estarão separados no diretório :
+
+./dist
+    ./statis
+    index.html
+
 ### Tecnologias utilizadas
 * PHP
 * MySQL
