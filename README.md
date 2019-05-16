@@ -4,17 +4,17 @@
 
 O Projeto KaBuM é um projeto desenvolvido para a participação do processo selectivo **KaBuM!**.
 
-#### Especificações
+### Especificações
 
 * Uma área administrativa onde o(s) usuário(s) devem acessar através de login e senha
 * Criar um gerenciador de clientes (Listar, Incluir, Editar e Excluir)
 * O cadastro do Cliente deve conter: Nome; Data Nascimento; CPF; RG; Telefone.
 * O Cliente pode ter 1 ou N endereços.
 
-#### 1 - Configuração
+### 1 - Configuração
 
 
-##### 1.1 - Softwares necessários
+#### 1.1 - Softwares necessários
 
 Antes de mais nada, baixe todos os programas a seguir:
 
@@ -22,7 +22,7 @@ Antes de mais nada, baixe todos os programas a seguir:
 * NPM  >= 6.8.0
 * MySQL >= 5.7.23
 
-##### 1.2 - Diretório remoto
+#### 1.2 - Diretório remoto
 
 Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito, escolha um diretório de seu preferência e utilize o seguinte comando em seu terminal.
 
@@ -41,7 +41,7 @@ Agora vamos baixar todas dependências que o projeto vue utiliza:
 npm install
 ```
 
-## 1.3 Webservice PHP
+#### 1.3 Webservice PHP
 
 O Webservice é quem prove toda massa de dados necessárias para o painel administrativo funcionar. Nesse Projeto o webservice foi construido do zero, mais a frente dessa leitura você vai encontrar as rotas que ele disponibiliza.
 
@@ -86,7 +86,7 @@ $password = "";
 
 ```
 
-#### Tecnologias utilizadas
+### Tecnologias utilizadas
 * PHP
 * Vue.js
 * Vuetify
