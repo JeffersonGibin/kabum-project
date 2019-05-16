@@ -1,4 +1,4 @@
-# Projeto Kabum
+# Projeto KaBuM
 
 
 ## PROJETO ALUNO FRONT-END
@@ -6,7 +6,7 @@
 
 ### O que é ?
 
-O Projeto Kabum é um projeto desenvolvido para a participação do processo selectivo **KABUM**.
+O Projeto KaBuM é um projeto desenvolvido para a participação do processo selectivo **KaBuM!**.
 
 
 #### Especificações
@@ -29,3 +29,4 @@ Se você está acessando esta página pela primeiva vez e gostaria de testar a a
 * HTML
 * CSS
 * JavaScript
+* MySQL
