@@ -57,7 +57,8 @@ Use o exemplo a seguir para restaurar a base de dados por linha de comando.
 ```bash
 mysql -u${SEU USUÁRIO} -p${SUA SENHA} ${NOME DA BASE DE DADOS} < database.sql
 
-# Algo como -> mysql -uroot -p123 bancoDeDados > database.sql
+#Algo como
+mysql -uroot -p123 bancoDeDados > database.sql
 ```
 
 
