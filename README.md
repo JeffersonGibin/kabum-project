@@ -169,10 +169,10 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | usuarioid      | int        | usuário que cadastrou o cliente **(Required)** |
 
 **Rotas de cliente**
-*  POST - http://localhost/api/cadCliente/
-*  PUT - http://localhost/api/editCliente/[clienteID]
-*  PUT - http://localhost/api/Remover/[clienteID]
-*  GET - http://localhost/api/listaCliente/[clienteID]
+*  Cadastrar POST - http://localhost/api/cadCliente/
+*  Editar PUT - http://localhost/api/editCliente/[clienteID]
+*  Remover PUT - http://localhost/api/removeCliente/[clienteID]
+*  Listar GET - http://localhost/api/listaCliente/[clienteID]
 
 #### Endereço Cliente
 
@@ -190,10 +190,10 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 **Rotas de endereço**
 * Todos os campos da entidade ClienteEndereco pode ser passados exceto, clienteid;
-*  POST - http://localhost/api/cadEnderecoCliente/
-*  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
-*  PUT - http://localhost/api/Remover/[enderecoClienteEnderecoID]
-*  GET - http://localhost/api/removeCliente/[enderecoClienteID]
+* Cadastrar POST - http://localhost/api/cadEnderecoCliente/
+* Editar  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
+* Remover  PUT - http://localhost/api/removerClienteEndereco/[enderecoClienteEnderecoID]
+* Listar  GET - http://localhost/api/listaClienteEndereco/[enderecoClienteID]
 
 
 #### Retorno de Erros
