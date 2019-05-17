@@ -216,12 +216,12 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 | Parâmetros     | tipo       | Descrição                                                    |
 | -------------  |------------|---------------------------------------------------------     |
-| ativo          | 0/1        | informa se o endereço está  ou não ativo       **(Required)**|
-| endereco       | String     | nome do cliente **(Required)**                               |
-| numero         | String     | Número                                                       |
-| bairro         | String     | Bairro do endereço                                           | 
-| cep            | String     | Cep do endereço do cliente                                   |
-| clienteid      | int        | clienteid                                                    |
+| ativo          | 0/1        | informa se o endereço está  ou não ativo     **(Required)**  |
+| endereco       | String     | nome do cliente                              **(Required)**  |
+| numero         | String     | Número                                       **(Required)**  |
+| bairro         | String     | Bairro do endereço                           **(Required)**  | 
+| cep            | String     | Cep do endereço do cliente                   **(Required)**  |
+| clienteid      | int        | clienteid                                    **(Required)**  |
 | estadoid       | int        | Estadoid                                                     |
 | cidadeid       | int        | cidadeid                                                     |
 
