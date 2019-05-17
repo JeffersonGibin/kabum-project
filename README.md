@@ -2,7 +2,7 @@
 
 ### O que é ?
 
-Um simples projeto desenvolvido para participação do processo selectivo do  **KaBuM Comércio Eletrônic!".
+Um simples projeto desenvolvido para participação do processo selectivo do  **KaBuM Comércio Eletrônic!**.
 
 ### Especificações do Desafio
 
