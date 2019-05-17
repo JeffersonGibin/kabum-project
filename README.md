@@ -210,9 +210,9 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 ## Como colocar em produção ?
 
-Primeiramente altere o caminho da API acessando painel/src/services/Services.js e altere a constante *URL*.
+1° - Altere o caminho da API acessando **painel/src/services/Services.js** e altere a constante *URL* com a url correta.
 
-Muito simples, acesse o diretório raiz do painel e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos para exbir a página estarão separados no diretório **./dist**:
+2 ° - Acesse o diretório raiz do painel e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos para exbir a página estarão separados no diretório **./dist**:
 
 
 ### Tecnologias utilizadas
