@@ -33,7 +33,7 @@ Isso significa que você não tem o PDO instalado, geralmente esse problema acon
 ```bash
  sudo apt-get install php-pdo php-mysql
  sudo service apache2 restart
-
+```
 
 ### Diretório remoto
 
