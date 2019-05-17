@@ -19,6 +19,22 @@ Antes de mais nada, baixe e instale todos os programas a seguir:
 * NPM  >= 6.8.0
 * MySQL >= 5.7.23
 
+
+### Configurações PHP
+
+Certifique-se que o PDO do PHP esteja habilitado no seu servidor local.
+Em seu php.ini procure por 'extension=pdo_mysql'  caso esteja assim ';extension=pdo_mysql' remova ';' e restart o php.
+
+#### Possíveis erros de conexão
+**'Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' on Synology DSM6'**
+
+Isso significa que você não tem o PDO instalado, geralmente esse problema acontece em ambiente Linux. Se esse problema aconter com você utilize o seguinte comando.
+
+```bash
+ sudo apt-get install php-pdo php-mysql
+ sudo service apache2 restart
+
+
 ### Diretório remoto
 
 Certifique-se de que você já tenha feito um clone do repositório. Caso não tenha feito, escolha um diretório de seu preferência e utilize o seguinte comando em seu terminal.
