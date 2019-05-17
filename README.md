@@ -81,6 +81,7 @@ Acesse o diretório kabum-project/webservice/config/src/settings/ e edite o arqu
 $environment = "DEV";
 
 /*
+ * Não esqueceça desse diretório.
  * Diretório raiz.
  */
 $dirName = "kabum";
