@@ -2,7 +2,7 @@
 
 ### O que é ?
 
-Um simples projeto desenvolvido para participação do processo selectivo do  **KaBuM Comércio Eletrônic!".
+Um simples projeto desenvolvido para participação do processo selectivo do  **KaBuM Comércio Eletrônic!**.
 
 ### Especificações do Desafio
 
@@ -27,16 +27,40 @@ Certifique-se de que você já tenha feito um clone do repositório. Caso não t
 git clone https://github.com/JeffersonGibin/kabum-project.git
 ```
 
-O projeto KaBuM utiliza vue.js e o source de seus arquivos estão em '.vue.js' para testar em ambiente local utilize os seguintes comandos:
+### Depêndencias package.json
+
+Agora vamos baixar todas dependências que o projeto utiliza. Acesse o diretório do painel e digite:
+```bash
+npm install
+```
+
+O projeto utiliza vue.js e o source de seus arquivos estão em '.vue' para testar em ambiente local talvez seja necessário a instalação de vue.
 ```bash
 npm install vue
 ```
 
-Agora vamos baixar todas dependências que o projeto vue utiliza:
+### Restaurando banco de dados.
 
-```bash
-npm install
+Certifique-se que o MySQL já esteja instalado em sua máquina e acesse o diretório da pasta **webservice** pelo terminal.
+**kabum-project\webservice\src\script**.
+
+Agora vamos restaurar a base de dados, primeiro crie um banco de dados chamado 'kabum'.
+
+```bash 
+mysql -uroot -p123
+
+create database kabum charset=utf8;
+exit;
 ```
+
+Use o exemplo a seguir para restaurar a base de dados por linha de comando.
+```bash
+mysql -u${SEU USUÁRIO} -p${SUA SENHA} ${NOME DA BASE DE DADOS} < database.sql
+
+#Algo como
+mysql -uroot -p123 bancoDeDados > database.sql
+```
+
 
 ### Webservice PHP
 
@@ -89,15 +113,41 @@ Para testar localmente certifique-se de que tenha todos os programas necessário
 
 ## Fotos do sistema
 
+
 ## Login
+
 
 ![github-small](screenshot/login.png)
 
+
 ## Painel
+
 
 ![github-small](screenshot/painel.png)
 
 
+## Listagem de clientes
+
+
+![github-small](screenshot/painel.png)
+
+
+## Cadastro de clientes
+
+
+![github-small](screenshot/cadastro-cliente.png)
+
+
+## Editar clientes
+
+
+![github-small](screenshot/editar-cliente.png)
+
+
+## Endereço clientes
+
+
+![github-small](screenshot/endereco.png)
 
 
 ## Documentação API
@@ -116,7 +166,7 @@ Para gerar um token você precisa enviar login e senha para o endpoint de login.
 Para cadastrar um usuário no sistema utilize a seguinte Query.
 
 ```sql
-  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('Jefferson', 'Teste', md5('123'), 'ADMIN');
+  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('admin', 'admin', md5('123'), 'ADMIN');
 ```
 
 #### HEADER
@@ -143,10 +193,10 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | usuarioid      | int        | usuário que cadastrou o cliente **(Required)** |
 
 **Rotas de cliente**
-*  POST - http://localhost/api/cadCliente/
-*  PUT - http://localhost/api/editCliente/[clienteID]
-*  PUT - http://localhost/api/Remover/[clienteID]
-*  GET - http://localhost/api/listaCliente/[clienteID]
+*  Cadastrar POST - http://localhost/api/cadCliente/
+*  Editar PUT - http://localhost/api/editCliente/[clienteID]
+*  Remover PUT - http://localhost/api/removeCliente/[clienteID]
+*  Listar GET - http://localhost/api/listaCliente/[clienteID]
 
 #### Endereço Cliente
 
@@ -161,19 +211,18 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | clienteid      | int        | clienteid                                                    |
 | estadoid       | int        | Estadoid                                                     |
 | cidadeid       | int        | cidadeid                                                     |
-| usuarioid      | int        | usuário que cadastrou o cliente **(Required)**               |
 
 **Rotas de endereço**
-* Todos os campos da entidade ClienteEndereco pode ser passados exceto, usuarioid e clienteid;
-*  POST - http://localhost/api/cadEnderecoCliente/
-*  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
-*  PUT - http://localhost/api/Remover/[enderecoClienteEnderecoID]
-*  GET - http://localhost/api/removeCliente/[enderecoClienteID]
+* Todos os campos da entidade ClienteEndereco pode ser passados exceto, clienteid;
+* Cadastrar POST - http://localhost/api/cadEnderecoCliente/
+* Editar  PUT - http://localhost/api/editCliente/[enderecoClienteEnderecoID]);
+* Remover  PUT - http://localhost/api/removerClienteEndereco/[enderecoClienteEnderecoID]
+* Listar  GET - http://localhost/api/listaClienteEndereco/[enderecoClienteID]
 
 
 #### Retorno de Erros
 
-| Status                      | Code | message                                                  |
+| Status                      | Code | Message                                                  |
 | ----------------------------|------|----------------------------------------------------------|
 | ERRO                        | 500  | Você não está logado no sistema!                         |
 | REQUIRED_VALUE              | 200  | Campos obrigatórios                                      |
@@ -185,11 +234,10 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 ## Como colocar em produção ?
 
-Muito simples, acesse o diretório raiz do projeto e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos para exbir a página estarão separados no diretório **./dist**:
+1° - Altere o caminho da API acessando **painel/src/services/Services.js** e altere a constante *URL* com a url correta.
 
-./dist
-    ./statis
-    /index.html
+2 ° - Acesse o diretório raiz do painel e digite **npm run build**. O webpack e suas dependências iram empacotar todos os arquivos necessários, após terminar, todos os arquivos para exbir a página estarão separados no diretório **./dist**:
+
 
 ### Tecnologias utilizadas
 * PHP
