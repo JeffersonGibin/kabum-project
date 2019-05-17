@@ -6,9 +6,9 @@
 $environment = "DEV";
 
 /*
- * Diretório raiz.
+ * Diretório raiz
  */
-$dirName = "kabum";
+$dirName = "webservice";
 
 /*
  * Host da onde está o banco de dados.
