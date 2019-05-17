@@ -198,7 +198,7 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 
 #### Retorno de Erros
 
-| Status                      | Code | message                                                  |
+| Status                      | Code | Message                                                  |
 | ----------------------------|------|----------------------------------------------------------|
 | ERRO                        | 500  | Você não está logado no sistema!                         |
 | REQUIRED_VALUE              | 200  | Campos obrigatórios                                      |
