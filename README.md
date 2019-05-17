@@ -108,10 +108,6 @@ $password = "";
 
 ```
 
-### Front-end
-
-Para testar localmente certifique-se de que tenha todos os programas necessários já instalado e que o servidor PHP com o webservice esteja funcionando. Execute o comando **npm run dev** para iniciar o projeto em localhost.
-
 ## Fotos do sistema
 
 
@@ -232,6 +228,11 @@ Em todas as rotas é necessário enviar o token(Authorization) no header da requ
 | CLIENTE_ENDERECO_NOT_EXISTS | 200  | O endereço que você está tentando editar não existe.     |
 | NOT_FOUND                   | 200  | Retornado quando algo não foi encontrado                 |
 
+
+
+## Como testar em modo  desenvolvimento ?
+
+Para testar em ambiente de desenvolvimento certifique-se de ter todos os programas necessários instalados e que o webservice esteja corretamente configurado. Execute o comando **npm run dev** para iniciar o projeto.
 
 ## Como colocar em produção ?
 
