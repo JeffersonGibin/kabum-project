@@ -89,15 +89,41 @@ Para testar localmente certifique-se de que tenha todos os programas necessário
 
 ## Fotos do sistema
 
+
 ## Login
+
 
 ![github-small](screenshot/login.png)
 
+
 ## Painel
+
 
 ![github-small](screenshot/painel.png)
 
 
+## Listagem de clientes
+
+
+![github-small](screenshot/painel.png)
+
+
+## Cadastro de clientes
+
+
+![github-small](screenshot/cadastro-cliente.png)
+
+
+## Editar clientes
+
+
+![github-small](screenshot/editar-cliente.png)
+
+
+## Endereço clientes
+
+
+![github-small](screenshot/endereco.png)
 
 
 ## Documentação API
