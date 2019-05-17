@@ -142,7 +142,7 @@ Para gerar um token você precisa enviar login e senha para o endpoint de login.
 Para cadastrar um usuário no sistema utilize a seguinte Query.
 
 ```sql
-  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('Jefferson', 'Teste', md5('123'), 'ADMIN');
+  INSERT INTO usuario (nome, login, senha, permissao) VALUES ('admin', 'admin', md5('123'), 'ADMIN');
 ```
 
 #### HEADER
