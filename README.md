@@ -2,9 +2,9 @@
 
 ### O que é ?
 
-O Projeto KaBuM é um projeto desenvolvido para participação do processo selectivo **KaBuM!**.
+Um simples projeto desenvolvido para participação do processo selectivo do  **KaBuM Comércio Eletrônic!".
 
-### Especificações
+### Especificações do Desafio
 
 * Uma área administrativa onde o(s) usuário(s) devem acessar através de login e senha
 * Criar um gerenciador de clientes (Listar, Incluir, Editar e Excluir)
@@ -42,9 +42,9 @@ npm install
 
 O Webservice é quem prove toda massa de dados necessárias para o painel administrativo funcionar. Nesse Projeto o webservice foi construido do zero, mais a frente dessa leitura você vai encontrar as rotas que ele disponibiliza.
 
-Para que o webservice funcione é necessário copiar a pasta webservice dentro do diretório htdocs do seu servidor local.
+Para que o webservice funcione é necessário copiar a pasta webservice dentro do diretório **htdocs** do seu servidor local.
 
-#### Configuração do WebService
+### Configuração do WebService
 
 Acesse o diretório kabum-project/webservice/config/src/settings/ e edite o arquivo config.php
 
@@ -83,8 +83,11 @@ $password = "";
 
 ```
 
-## Sistema
+### Front-end
 
+Para testar localmente certifique-se de que tenha todos os programas necessários já instalado e que o servidor PHP com o webservice esteja funcionando. Execute o comando **npm run dev** para iniciar o projeto em localhost.
+
+## Sistema
 
 
 ## Documentação API
@@ -93,7 +96,6 @@ $password = "";
 
 Para gerar um token você precisa enviar login e senha para o endpoint de login. O token, id e nome do usuário são salvos no localStorage. Para recuperar utilize a função
 
-**Retorno**
 ```javascript
 {
  // ao efetuar login você vai perceber que a sessão é salva com essa chave.
