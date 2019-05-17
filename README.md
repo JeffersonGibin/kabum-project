@@ -27,16 +27,39 @@ Certifique-se de que você já tenha feito um clone do repositório. Caso não t
 git clone https://github.com/JeffersonGibin/kabum-project.git
 ```
 
-O projeto KaBuM utiliza vue.js e o source de seus arquivos estão em '.vue.js' para testar em ambiente local utilize os seguintes comandos:
+### Depêndencias package.json
+
+Agora vamos baixar todas dependências que o projeto utiliza. Acesse o diretório do painel e digite:
+```bash
+npm install
+```
+
+O projeto utiliza vue.js e o source de seus arquivos estão em '.vue' para testar em ambiente local talvez seja necessário a instalação de vue.
 ```bash
 npm install vue
 ```
 
-Agora vamos baixar todas dependências que o projeto vue utiliza:
+### Restaurando banco de dados.
 
-```bash
-npm install
+Certifique-se que o MySQL já esteja instalado em sua máquina e acesse o diretório da pasta **webservice** pelo terminal.
+**kabum-project\webservice\src\script**.
+
+Agora vamos restaurar a base de dados, primeiro crie um banco de dados chamado 'kabum'.
+
+```bash 
+mysql -uroot -p123
+
+create database kabum charset=utf8;
+exit;
 ```
+
+Use o exemplo a seguir para restaurar a base de dados por linha de comando.
+```bash
+mysql -u${SEU USUÁRIO} -p${SUA SENHA} ${NOME DA BASE DE DADOS} < database.sql
+
+# Algo como -> mysql -uroot -p123 bancoDeDados > database.sql
+```
+
 
 ### Webservice PHP
 
