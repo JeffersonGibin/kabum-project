@@ -23,7 +23,17 @@ Antes de mais nada, baixe e instale todos os programas a seguir:
 ### Configurações PHP
 
 Certifique-se que o PDO do PHP esteja habilitado no seu servidor local.
-Em seu php.ini procure por 'extension=pdo_mysql'  caso esteja assim ';extension=pdo_mysql' remova ';' e restart o php.
+Em seu php.ini procure por:
+
+```php
+;extension=pdo_mysql
+```
+e deixe assim
+
+```php
+extension=pdo_mysql
+```
+e reinicie o serviço do apache.
 
 #### Possíveis erros de conexão
 **'Undefined class constant 'MYSQL_ATTR_INIT_COMMAND' on Synology DSM6'**
@@ -50,7 +60,7 @@ Agora vamos baixar todas dependências que o projeto utiliza. Acesse o diretóri
 npm install
 ```
 
-O projeto utiliza vue.js e o source de seus arquivos estão em '.vue' para testar em ambiente local talvez seja necessário a instalação de vue.
+O projeto utiliza vue.js e o source de seus arquivos estão em '.vue' para testar em ambiente local talvez seja necessário a instalação do vue.
 ```bash
 npm install vue
 ```

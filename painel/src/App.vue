@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-content>
-          <v-container fluid>
+          <v-container fluid pa-0>
               <router-view>
               </router-view>
           </v-container>
@@ -20,10 +20,4 @@ export default {
 </script>
  
  <style>
-    .container{
-        padding: 0;
-        margin: 0;
-    }
  </style>
- 
-
