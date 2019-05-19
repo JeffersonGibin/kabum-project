@@ -1,7 +1,7 @@
 import axios from 'axios'
 import LocalStorage from '../utils/LocalStorage'
 
-const URL = "http://localhost/kabum/api/"
+const URL = "http://142.93.48.179/webservice/api/"
 
 let data = LocalStorage.get("SESSION_KABUM") || {token: ''};
 
