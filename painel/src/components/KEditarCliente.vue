@@ -25,15 +25,13 @@
                 <v-flex xs12 md6>
                   <v-text-field v-model="telefone" label="Telefone" mask="(##) ####-#####"></v-text-field>
                 </v-flex>
-              </v-layout>
-              <v-layout>
-                <v-flex xs12 md5>
+                <v-flex xs12 md4>
                   <v-text-field v-model="celular" label="Celular" mask="(##) #####-####"></v-text-field>
                 </v-flex>
-                <v-flex xs12 md5>
+                <v-flex xs12 md4>
                   <v-text-field v-model="cpf" label="CPF" mask="###.###.###-##"></v-text-field>
                 </v-flex>
-                <v-flex xs12 md5>
+                <v-flex xs12 md4>
                   <v-text-field v-model="rg" label="RG" :maxLength="10"></v-text-field>
                 </v-flex>
               </v-layout>
@@ -107,7 +105,7 @@ export default {
           celular: this.celular
         }).then(response => {
           const { status, message } = response.data
-          
+
         if (status == "USER_NOT_EXISTS" || status == "USER_EXISTS") {
             alert(message)
             return false

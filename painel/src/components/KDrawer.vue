@@ -48,10 +48,6 @@ export default {
         onClick(item) {
             if(item.title == "Clientes") {
                this.$router.push('/listaCliente')
-            } else if (item.title == "Usuários") {
-                console.log("Abrir rota de Usuários");
-            } else {
-                console.log("Pagina 404");
             }
         }
     }
@@ -61,6 +57,7 @@ export default {
  <style style="scss" scoped>
     .logo {
       width: 130px;
+      padding: 5px;
     }
     .list-item {
       margin-top: 20px;
