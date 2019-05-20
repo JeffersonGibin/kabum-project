@@ -4,46 +4,48 @@
             <v-content>
                 <v-container fluid class="content-login">
                     <v-layout row justify-center >
-                        <v-flex xs12 sm3 >
-                            <v-card class="box-logo text-md-center">
+                        <v-flex xs12 sm10 md3 >
+                            <v-card class="box-logo text-xs-center text-sm-center text-md-center">
                                 <img class="logo" src="../assets/logo.png"/>
-                            </v-card>                    
-                            <v-card class="login">                             
-                                <v-text-field
-                                v-model="login"
-                                :rules="[rules.required, rules.min]"
-                                name="ogin"
-                                label="Login"
-                                hint="Digite pelo menos 3 caracteres."
-                                />
+                            </v-card>
+                            <v-card class="login">
+                                <v-form ref="form" v-model="valid">
+                                    <v-text-field
+                                    v-model="login"
+                                    :rules="rules"
+                                    name="login"
+                                    label="Login"
+                                    hint="Digite pelo menos 3 caracteres."
+                                    />
 
-                                <v-text-field
-                                v-model="password"
-                                :append-icon="show1 ? 'visibility' : 'visibility_off'"
-                                :rules="[rules.required, rules.min]"
-                                type="Password"
-                                name="assword"
-                                label="Senha"
-                                hint="Digite pelo menos 3 caracteres."
-                                :disabled="disabledInputSenha"
-                                max-lengh
-                                />                  
-                                <div>
-                                    <v-btn @click="authenticate"
-                                    class="btn-entrar" 
-                                    block 
-                                    color="secondary" 
-                                    :disabled="disabledButton">
-                                        Entrar
-                                    </v-btn>
-                                </div>
-                                <v-alert
-                                    :value="showError"
-                                    type="error"
-                                    transition="scale-transition"
-                                >
-                                    Usuário ou senha inválido!
-                                </v-alert>                                
+                                    <v-text-field
+                                    v-model="password"
+                                    :append-icon="show1 ? 'visibility' : 'visibility_off'"
+                                    :rules="rules"
+                                    type="Password"
+                                    name="password"
+                                    label="Senha"
+                                    hint="Digite pelo menos 3 caracteres."
+                                    :disabled="disabledInputSenha"
+                                    max-lengh
+                                    />
+                                </v-form>
+                                    <div>
+                                        <v-btn @click="authenticate"
+                                        class="btn-entrar"
+                                        block
+                                        color="secondary"
+                                        :disabled="disabledButton">
+                                            Entrar
+                                        </v-btn>
+                                    </div>
+                                    <v-alert
+                                        :value="showError"
+                                        type="error"
+                                        transition="scale-transition"
+                                    >
+                                        Login ou senha inválido!
+                                    </v-alert>
                             </v-card>
                         </v-flex>
                     </v-layout>
@@ -62,14 +64,15 @@ export default {
     name: "k-login",
     data () {
         return {
+            valid: true,
             show1: false,
             show2: false,
             login: '',
             password: '',
-            rules: {
-                required: value => !!value || 'Obrigatório.',
-                min: v =>  v.length < 3 ? 'Min 3 caracteres.' : ''
-            },
+            rules: [
+                v => !!v || 'Obrigatório.',
+                v =>  v.length >= 3 || 'Min 3 caracteres.'
+            ],
             disabledButton: true,
             disabledInputSenha: true,
             showError: false
@@ -88,30 +91,31 @@ export default {
     },
     methods: {
         authenticate() {
-            const { login, password } = this
-            
-            if(!login.length || !password.length){
-                return false;
-            }
 
+             if (this.$refs.form.validate()) {
+                const { login, password } = this
 
-            ServiceLogin.efetuarLogin(login, password).then(response => {
-
-                if(response.status === 200){
-                    if(response.data.token && response.data.token != "") {
-                        LocalStorage.add("SESSION_KABUM", {
-                            session: response.data.sessionData,
-                            token: response.data.token
-                        });
-                        this.$router.push('painel');
-                    } else {
-                        this.showError = true
-                    }
+                if(!login.length || !password.length){
+                    return false;
                 }
 
-            })
-            .catch(function (error) {
-            })
+
+                ServiceLogin.efetuarLogin(login, password).then(response => {
+
+                    if(response.status === 200){
+                        if(response.data.token && response.data.token != "") {
+                            LocalStorage.add("SESSION_KABUM", {
+                                session: response.data.sessionData,
+                                token: response.data.token
+                            });
+                            this.$router.push('painel');
+                        } else {
+                            this.showError = true
+                        }
+                    }
+
+                })
+             }
         }
     }
 }
@@ -128,7 +132,7 @@ export default {
     .login {
         padding: 20px 30px 50px 30px;
     }
-    
+
     .box-logo {
         padding: 20px;
     }
