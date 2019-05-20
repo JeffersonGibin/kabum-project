@@ -7,8 +7,9 @@ import KLogin from '../components/KLogin'
 import KDashboard from '../components/KDashboard'
 import KListaCliente from '../components/KListaCliente'
 import KCadCliente from '../components/KCadCliente'
+import LocalStorage from '../utils/LocalStorage'
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -35,3 +36,18 @@ export default new Router({
     }
   ]
 })
+const data = LocalStorage.get("SESSION_KABUM") || {token: ''};
+
+router.beforeEach((routeTo, routeFrom, next) => {
+    if(routeTo.name != 'login') {
+      if(!data.token) {
+          next('/')
+      } else {
+          next();
+      }
+    }
+    next()
+})
+
+
+export default router

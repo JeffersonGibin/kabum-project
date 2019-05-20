@@ -6,7 +6,7 @@
                     <v-layout row justify-center >
                         <v-flex xs12 sm10 md3 >
                             <v-card class="box-logo text-xs-center text-sm-center text-md-center">
-                                <img class="logo" src="../assets/logo.png"/>
+                            
                             </v-card>
                             <v-card class="login">
                                 <v-form ref="form" v-model="valid">

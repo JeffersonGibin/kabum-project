@@ -32,20 +32,6 @@ export default {
     toogle(open){
      this.openDrawer = !this.openDrawer
     }
-  },
-
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      let data = LocalStorage.get("SESSION_KABUM");
-      if(!data || !!data.session.token){
-        vm.$router.push('/')
-      }
-      vm.userName = data.session.nome
-
-      next();
-    }) 
-  } 
+  }
 }
 </script>
- 
-
