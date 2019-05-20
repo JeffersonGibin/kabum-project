@@ -45,8 +45,10 @@ router.beforeEach((routeTo, routeFrom, next) => {
       } else {
           next();
       }
+    } else {
+
+      next()
     }
-    next()
 })
 
 
