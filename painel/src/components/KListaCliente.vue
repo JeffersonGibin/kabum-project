@@ -21,7 +21,6 @@
       <v-data-table lazy :headers="headers" :items="desserts" :search="search" :loading="loading">
         <template v-slot:items="props">
           <td>{{ props.item.nome }}</td>
-          <td>{{ props.item.telefone }}</td>
           <td class="justify-center layout px-0">
             <v-icon class="mr-2" color="info" @click="editItem(props.item)">edit</v-icon>
             <v-icon color="red" @click="deleteItem(props.item, props)">delete</v-icon>
@@ -81,7 +80,6 @@ export default {
           text: 'Nome',
           value: "nome"
         },
-        { text: "Telefone", value: "telefone" },
         { text: "Ações", value: "name", sortable: false }
       ],
       desserts: [],
