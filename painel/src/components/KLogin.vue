@@ -68,7 +68,7 @@ export default {
             password: '',
             rules: {
                 required: value => !!value || 'Obrigatório.',
-                min: v => length && v.length >= 3 || 'Min 3 caracteres.'
+                min: v =>  v.length < 3 ? 'Min 3 caracteres.' : ''
             },
             disabledButton: true,
             disabledInputSenha: true,
@@ -79,6 +79,7 @@ export default {
         login(newValue){
             this.disabledInputSenha = newValue ? false : true
             this.showError = false
+            this.password = ""
         },
         password(newValue){
             this.disabledButton = newValue ? false : true
