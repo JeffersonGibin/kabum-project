@@ -130,9 +130,9 @@ export default {
       }
 
       this.loading = true;
-      ServiceCliente.listAll(usuarioid).then(response => {
+      ServiceCliente.listAll(usuarioid, this.sessionUser.token).then(response => {
         const { clientes, message } = response.data;
-        
+
         this.desserts = [];
         this.desserts = clientes;
         this.loading = false;
