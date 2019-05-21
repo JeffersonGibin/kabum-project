@@ -9,6 +9,7 @@ import KListaCliente from '../components/KListaCliente'
 import KCadCliente from '../components/KCadCliente'
 import LocalStorage from '../utils/LocalStorage'
 
+
 const router = new Router({
   mode: 'history',
   routes: [
@@ -21,34 +22,43 @@ const router = new Router({
       path: "/painel",
       name: "painel",
       component: KDashboard,
+      meta: {
+        requiresAuth: true
+      },
       children: [
         {
           path: '/listaCliente',
           name: 'listaCliente',
-          component: KListaCliente
+          component: KListaCliente,
+          meta: {
+            requiresAuth: true
+          }
         },
         {
           path: '/cadClientes',
           name: 'cadClientes',
-          component: KCadCliente
+          component: KCadCliente,
+          meta: {
+            requiresAuth: true
+          }
         }
       ]
     }
   ]
 })
-const data = LocalStorage.get("SESSION_KABUM") || {token: ''};
 
-router.beforeEach((routeTo, routeFrom, next) => {
-    if(routeTo.name != 'login') {
-      if(!data.token) {
-          next('/')
-      } else {
-          next();
-      }
-    } else {
 
-      next()
-    }
+router.beforeEach((to, routeFrom, next) => {
+  const data = LocalStorage.get("SESSION_KABUM") || {token: ''};
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  if(requiresAuth && !data.token) {
+    next('/');
+  } else if(requiresAuth && data.token) {
+    next();
+  } else {
+    next();
+  }
 })
 
 
