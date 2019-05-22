@@ -4,8 +4,6 @@
 
 Um simples projeto desenvolvido para participação do processo selectivo do  **KaBuM Comércio Eletrônic!**.
 
-## [Ver página de Demonstração →](http://142.93.48.179/)
-
 ### Especificações do Desafio
 
 * Uma área administrativa onde o(s) usuário(s) devem acessar através de login e senha
