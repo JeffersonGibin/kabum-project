@@ -1,8 +1,5 @@
+import HTTP from './HTTP'
 
-import Service from './Service'
-
-export default  {
-    listAll: (id)  => {
-        return Service.get("./listaCidade/"+id)
-    }
+export default {
+    listAll: (id) => HTTP.get("./listaCidade/" + id)
 }

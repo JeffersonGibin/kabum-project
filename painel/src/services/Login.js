@@ -1,11 +1,8 @@
-import Service from './Service'
+import HTTP from './HTTP'
 
-export default  {
-    efetuarLogin: (user, password)  => {
-
-        return Service.post("./login", {
-            login: user,
-            senha: password
-        })
-    }
+export default {
+    efetuarLogin: (user, password) => HTTP.post("./login", {
+        login: user,
+        senha: password
+    })
 }

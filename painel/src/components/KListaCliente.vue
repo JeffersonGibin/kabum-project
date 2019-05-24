@@ -54,7 +54,7 @@
     </v-card>
 
     <k-editar-cliente v-model="showModalEditarCliente" :item="item" @editSucess="onEditItem"/>
-    <k-endereco-cliente v-model="showModalEndereco" :itemCliente="item"/>
+    <k-endereco-cliente v-show="showModalEndereco" v-model="showModalEndereco" :itemCliente="item"/>
   </div>
 </template>
 
@@ -128,7 +128,7 @@ export default {
       }
 
       this.loading = true;
-      ServiceCliente.listAll(usuarioid, this.sessionUser.token).then(response => {
+      ServiceCliente.listAll(usuarioid).then(response => {
         const { clientes, message } = response.data;
 
         this.desserts = [];
