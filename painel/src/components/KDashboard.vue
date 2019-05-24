@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      userName: "",
+      userName: LocalStorage.get("SESSION_KABUM").session.nome,
       openDrawer: false
     }
   },
