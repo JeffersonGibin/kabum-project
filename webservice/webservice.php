@@ -45,6 +45,7 @@ try {
     $data = $service->processesRequest();
     
     if(empty($data)){
+        $responseWS->addStatus("ERROR");
         throw new Exception("O serviço não existe!");
     }
     
@@ -66,10 +67,7 @@ try {
         }
     }    
     
-    // Verifico se o serviço existe e adiciono o arquivo
-    if(isset($data["service"]) && !empty($data["service"])){
-        require_once(_SERVICE_ . DIRECTORY_SEPARATOR . $data["service"] . ".php");
-    }
+    require_once(_SERVICE_ . DIRECTORY_SEPARATOR . $data["service"] . ".php");
 } catch (Exception $ex) {
     $responseWS->addResponseMessage($ex->getMessage());
 }
