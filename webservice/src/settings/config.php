@@ -30,8 +30,12 @@ $user = "root";
  */
 $password = "1234";
 
+/*
+* Define se o ambiente é produção ou desenvolvimento
+*/
+define("ENVIRONMENT", $environment);
 
-if(in_array($environment, array("DEV", "PROD")) && $environment == "DEV") {
+if(in_array(ENVIRONMENT, array("DEV", "PROD")) && ENVIRONMENT == "DEV") {
     if(empty($dirName)) {
         die("Diretório root não de finido!");
     }
