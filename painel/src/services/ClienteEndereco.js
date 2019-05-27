@@ -1,8 +1,8 @@
 import HTTP from './HTTP'
 
 export default {
-    cadEnderecoCliente: (data) =>  HTTP.post("./cadEnderecoCliente", data),
-    removerEnderecoCliente: (id) =>  HTTP.put("./removerEnderecoCliente/" + id),
-    editarEnderecoCliente: (id, data) =>  HTTP.put("./editClienteEndereco/" + id, data),
-    listAll: (id) =>  HTTP.get("./listaEnderecoCliente/" + id)
+    cadEnderecoCliente: (data) =>  HTTP.post("./enderecoCliente", data),
+    removerEnderecoCliente: (id) =>  HTTP.delete("./enderecoCliente/" + id),
+    editarEnderecoCliente: (id, data) =>  HTTP.patch("./enderecoCliente/" + id, data),
+    listAll: (id) =>  HTTP.get("./enderecoCliente/" + id)
 }
