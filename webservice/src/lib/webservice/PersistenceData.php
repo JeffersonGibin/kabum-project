@@ -42,7 +42,9 @@ class PersistenceData implements Crud {
         
         //construo o set do update
         foreach ($data as $key => $field) {
-            $fields[] = $key . " = :" . $key;
+            if(isset($field["value"])) {
+                $fields[] = $key . " = :" . $key;
+            }
         }
         
         //separado o array por virgula para usar na query
@@ -59,18 +61,19 @@ class PersistenceData implements Crud {
         //construo a query do update
         $query = "UPDATE " . $table . " SET ". $querySetValues . " WHERE " . $queryFilters;
         
+        // realiza merge dos campos e filtros deixando sempre os filtros por ultimo.
         $newData = array_merge($data, $where);
 
         $sth = $this->connection->prepare($query);
 
         //percorro $newData para saber onde colocar os valores do PDO
-        foreach ($newData as $key => $dataValue) {
-            $sth->bindValue(":".$key, $dataValue["value"], $dataValue["data_type"]);
+        foreach ($newData as $key => $fieldValue) {
+            if(isset($fieldValue["value"])) {
+                $sth->bindValue(":".$key, $fieldValue["value"], $fieldValue["data_type"]);
+            }
         }
         
         $sth->execute();
-        
-        
     }
 
     /*
